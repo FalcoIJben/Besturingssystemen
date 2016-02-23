@@ -1,0 +1,25 @@
+var classFirstFit =
+[
+    [ "FirstFit", "classFirstFit.html#a836e6a0d805aa194a13597bbcc7aab77", null ],
+    [ "~FirstFit", "classFirstFit.html#abbe98d08fee144ca7ec55b0ec6af07b0", null ],
+    [ "alloc", "classFirstFit.html#a8fcf584bc8b53b0b10b7bcf117e81dbf", null ],
+    [ "dump", "classFirstFit.html#ab9c5e0f3aaafd2e891e8bc31df936a74", null ],
+    [ "free", "classFirstFit.html#a31bb4c368667932bc3de47bb0af7f901", null ],
+    [ "getSize", "classFirstFit.html#a1c67381777b1b43a4f237f9045b875cf", null ],
+    [ "getType", "classFirstFit.html#aab1d481ff3438ee226e09e20da8130b7", null ],
+    [ "reclaim", "classFirstFit.html#aecb473b74da2969d4efa47ecdf1a21fd", null ],
+    [ "report", "classFirstFit.html#ae9cc31ac2ac3c6e3a0043f8ee77de937", null ],
+    [ "searcher", "classFirstFit.html#af90d381c1fee86cbe4c3f559e12314a5", null ],
+    [ "setCheck", "classFirstFit.html#a3bf70e649198f0cf39c54c7c55078681", null ],
+    [ "setSize", "classFirstFit.html#a713558e9a318d4ee6276322c02de2aac", null ],
+    [ "updateStats", "classFirstFit.html#a3d66889cb66a16c24d4cca8d0b72806b", null ],
+    [ "areas", "classFirstFit.html#a3a69186e743ad105358ad13f67c99004", null ],
+    [ "cflag", "classFirstFit.html#a9d5d07af8e2e54deb7a8863f629fb1d8", null ],
+    [ "mergers", "classFirstFit.html#a151741292950ebd171ea81f1953e118a", null ],
+    [ "qcnt", "classFirstFit.html#a31dd0a74283e3a6b182a7940ae654c11", null ],
+    [ "qsum", "classFirstFit.html#a5a632aab749445ef4f366e2ebac01e85", null ],
+    [ "qsum2", "classFirstFit.html#a47fbb29535d6b46c8bbbd4db243d2579", null ],
+    [ "reclaims", "classFirstFit.html#a9377ebc83e806d89983d5507005f7913", null ],
+    [ "size", "classFirstFit.html#a5d7a71270a7820aa97ebd17794ce8771", null ],
+    [ "type", "classFirstFit.html#a8c31faaa57658964ac597567b10c9983", null ]
+];

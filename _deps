@@ -1,0 +1,23 @@
+Allocator.o: Allocator.cc main.h common.h ansi.h asserts.h where.h \
+ assert_error.h Area.h Allocator.h
+Application.o: Application.cc main.h common.h ansi.h asserts.h where.h \
+ assert_error.h Area.h Allocator.h Stopwatch.h Application.h
+Area.o: Area.cc asserts.h where.h assert_error.h Area.h
+assert_error.o: assert_error.cc assert_error.h
+FirstFit2.o: FirstFit2.cc FirstFit2.h FirstFit.h Fitter.h Allocator.h \
+ Area.h asserts.h where.h assert_error.h
+FirstFit.o: FirstFit.cc FirstFit.h Fitter.h Allocator.h Area.h asserts.h \
+ where.h assert_error.h ansi.h common.h
+Fitter.o: Fitter.cc ansi.h common.h Fitter.h Allocator.h Area.h asserts.h \
+ where.h assert_error.h
+main.o: main.cc main.h common.h ansi.h asserts.h where.h assert_error.h \
+ Area.h Allocator.h RandomFit.h FirstFit.h Fitter.h FirstFit2.h NextFit.h \
+ NextFit2.h Application.h
+NextFit2.o: NextFit2.cc NextFit2.h NextFit.h Fitter.h Allocator.h Area.h \
+ asserts.h where.h assert_error.h
+NextFit.o: NextFit.cc main.h common.h ansi.h asserts.h where.h \
+ assert_error.h Area.h Allocator.h NextFit.h Fitter.h
+RandomFit.o: RandomFit.cc main.h common.h ansi.h asserts.h where.h \
+ assert_error.h Area.h Allocator.h RandomFit.h
+Stopwatch.o: Stopwatch.cc asserts.h where.h assert_error.h Stopwatch.h
+unix_error.o: unix_error.cc unix_error.h where.h

@@ -1,0 +1,7 @@
+<map id="Fitter" name="Fitter">
+<area shape="rect" id="node3" href="$classFirstFit.html" title="Het FirstFit algorithme gebruikt het eerste gevonden bruikbare gebied in de resource map..." alt="" coords="5,528,115,723"/>
+<area shape="rect" id="node5" href="$classNextFit.html" title="Het NextFit algorithme gebruikt het eerste gevonden bruikbare gebied in de resource map..." alt="" coords="139,521,249,730"/>
+<area shape="rect" id="node2" href="$classAllocator.html" title="Beschrijft de interface van een geheugenbeheer class/module. " alt="" coords="76,5,177,229"/>
+<area shape="rect" id="node4" href="$classFirstFit2.html" title="Het FirstFit algorithme gebruikt het eerste gevonden bruikbare gebied in de resource map..." alt="" coords="15,779,105,871"/>
+<area shape="rect" id="node6" href="$classNextFit2.html" title="Het NextFit algorithme gebruikt het eerste gevonden bruikbare gebied in de resource map..." alt="" coords="149,779,240,871"/>
+</map>

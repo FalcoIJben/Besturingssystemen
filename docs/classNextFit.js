@@ -1,0 +1,26 @@
+var classNextFit =
+[
+    [ "NextFit", "classNextFit.html#a51b5c8268b01baaae047c1582865b961", null ],
+    [ "~NextFit", "classNextFit.html#aaeca4ffe37f9d9d2b9aef4c3b1a6e166", null ],
+    [ "alloc", "classNextFit.html#ada8ac382ce2331ae281c01059100e8c3", null ],
+    [ "dump", "classNextFit.html#ae86198b44556e4ab13f792b92130f0a9", null ],
+    [ "free", "classNextFit.html#a4d499dc20fb84f9cb3a0e465890d8faa", null ],
+    [ "getSize", "classNextFit.html#a1c67381777b1b43a4f237f9045b875cf", null ],
+    [ "getType", "classNextFit.html#aab1d481ff3438ee226e09e20da8130b7", null ],
+    [ "reclaim", "classNextFit.html#a85df8208e65d8ec760fd0277fdf7724f", null ],
+    [ "report", "classNextFit.html#ae9cc31ac2ac3c6e3a0043f8ee77de937", null ],
+    [ "searcher", "classNextFit.html#a977dcd792439a198c9fac6d6981bb697", null ],
+    [ "setCheck", "classNextFit.html#a3bf70e649198f0cf39c54c7c55078681", null ],
+    [ "setSize", "classNextFit.html#a118ed699a9a433c6ba5fca1eb4f32faf", null ],
+    [ "updateStats", "classNextFit.html#a37f2274a6f4517e5a5b8e034e9f783fc", null ],
+    [ "areas", "classNextFit.html#ad245c41934f44c291f6d9af42d3205cf", null ],
+    [ "cflag", "classNextFit.html#a9d5d07af8e2e54deb7a8863f629fb1d8", null ],
+    [ "cursor", "classNextFit.html#a4c32e9dc659219ddf3ee1bd119617606", null ],
+    [ "mergers", "classNextFit.html#a151741292950ebd171ea81f1953e118a", null ],
+    [ "qcnt", "classNextFit.html#a31dd0a74283e3a6b182a7940ae654c11", null ],
+    [ "qsum", "classNextFit.html#a5a632aab749445ef4f366e2ebac01e85", null ],
+    [ "qsum2", "classNextFit.html#a47fbb29535d6b46c8bbbd4db243d2579", null ],
+    [ "reclaims", "classNextFit.html#a9377ebc83e806d89983d5507005f7913", null ],
+    [ "size", "classNextFit.html#a5d7a71270a7820aa97ebd17794ce8771", null ],
+    [ "type", "classNextFit.html#a8c31faaa57658964ac597567b10c9983", null ]
+];

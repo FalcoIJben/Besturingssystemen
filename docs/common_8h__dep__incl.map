@@ -1,0 +1,11 @@
+<map id="common.h" name="common.h">
+<area shape="rect" id="node2" href="$main_8h.html" title="Stuff needed in several places. " alt="" coords="307,155,368,181"/>
+<area shape="rect" id="node8" href="$ansi_8h.html" title="Defines various ansi color&#45;code strings. " alt="" coords="377,80,433,107"/>
+<area shape="rect" id="node3" href="$Allocator_8cc.html" title="De implementatie van Allocator. " alt="" coords="5,229,96,256"/>
+<area shape="rect" id="node4" href="$Application_8cc.html" title="De implementatie van Application. " alt="" coords="120,229,224,256"/>
+<area shape="rect" id="node5" href="$main_8cc.html" title="The main program. " alt="" coords="249,229,316,256"/>
+<area shape="rect" id="node6" href="$NextFit_8cc.html" title="De implementatie van NextFit. " alt="" coords="469,229,551,256"/>
+<area shape="rect" id="node7" href="$RandomFit_8cc.html" title="De implementatie van RandomFit. " alt="" coords="341,229,445,256"/>
+<area shape="rect" id="node9" href="$FirstFit_8cc.html" title="De implementatie van FirstFit. " alt="" coords="443,155,524,181"/>
+<area shape="rect" id="node10" href="$Fitter_8cc.html" title="De implementatie van de Fitter baseclass. " alt="" coords="549,155,619,181"/>
+</map>

@@ -1,0 +1,137 @@
+# depslib dependency file v1.0
+1391268094 source:/home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/Allocator.cc
+	"main.h"
+	"Allocator.h"
+
+1448638593 /home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/main.h
+	<iostream>
+	"common.h"
+	"ansi.h"
+	"asserts.h"
+	"Area.h"
+	"Allocator.h"
+
+1423315774 /home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/common.h
+
+1423260298 /home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/ansi.h
+	"common.h"
+
+1453197919 /home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/asserts.h
+	"where.h"
+	"assert_error.h"
+
+1453197867 /home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/where.h
+
+1448444481 /home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/assert_error.h
+	<stdexcept>
+
+1448638502 /home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/Area.h
+	<iostream>
+	"asserts.h"
+
+1421874196 /home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/Allocator.h
+	"Area.h"
+
+1448639046 source:/home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/Application.cc
+	<cstdlib>
+	"main.h"
+	"Stopwatch.h"
+	"Application.h"
+
+1448638676 /home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/Stopwatch.h
+	<sys/resource.h>
+	<sys/times.h>
+	<times.h>
+	<time.h>
+	<sys/time.h>
+	<windows.h>
+
+1422129450 /home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/Application.h
+	<list>
+	"Allocator.h"
+	"Area.h"
+
+1448639120 source:/home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/Area.cc
+	"asserts.h"
+	"Area.h"
+
+1453197642 source:/home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/assert_error.cc
+	<string>
+	<sstream>
+	"assert_error.h"
+
+1391268106 source:/home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/FirstFit.cc
+	"FirstFit.h"
+	"ansi.h"
+
+1422129302 /home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/FirstFit.h
+	"Fitter.h"
+
+1422127900 /home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/Fitter.h
+	<list>
+	"Allocator.h"
+
+1391268104 source:/home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/FirstFit2.cc
+	"FirstFit2.h"
+
+1422129314 /home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/FirstFit2.h
+	"FirstFit.h"
+
+1391268106 source:/home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/Fitter.cc
+	<cmath>
+	"ansi.h"
+	"Fitter.h"
+
+1455000543 source:/home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/main.cc
+	<vector>
+	<cstdlib>
+	<getopt.h>
+	"main.h"
+	"RandomFit.h"
+	"FirstFit.h"
+	"FirstFit2.h"
+	"NextFit.h"
+	"NextFit2.h"
+	"Application.h"
+
+1422129376 /home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/RandomFit.h
+	"Allocator.h"
+
+1422129328 /home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/NextFit.h
+	"Fitter.h"
+
+1422129336 /home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/NextFit2.h
+	"NextFit.h"
+
+1391268112 source:/home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/NextFit.cc
+	"main.h"
+	"NextFit.h"
+	"ansi.h"
+
+1391268110 source:/home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/NextFit2.cc
+	"NextFit2.h"
+
+1391268114 source:/home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/RandomFit.cc
+	"main.h"
+	"RandomFit.h"
+	<cstdlib>
+
+1391268116 source:/home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/Stopwatch.cc
+	<iostream>
+	<cstdio>
+	"asserts.h"
+	"Stopwatch.h"
+	<unistd.h>
+	<time.h>
+
+1448447775 source:/home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/unix_error.cc
+	<cstring>
+	<cerrno>
+	<sstream>
+	"unix_error.h"
+
+1454613056 /home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/unix_error.h
+	<stdexcept>
+	<string>
+	"where.h"
+

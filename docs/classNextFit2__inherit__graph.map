@@ -1,0 +1,5 @@
+<map id="NextFit2" name="NextFit2">
+<area shape="rect" id="node2" href="$classNextFit.html" title="Het NextFit algorithme gebruikt het eerste gevonden bruikbare gebied in de resource map..." alt="" coords="5,521,115,730"/>
+<area shape="rect" id="node3" href="$classFitter.html" title="A Fitter baseclass for various implementations of the members of the &quot;fit&quot; algorithm family..." alt="" coords="15,277,105,472"/>
+<area shape="rect" id="node4" href="$classAllocator.html" title="Beschrijft de interface van een geheugenbeheer class/module. " alt="" coords="9,5,111,229"/>
+</map>

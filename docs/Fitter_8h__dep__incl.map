@@ -1,0 +1,12 @@
+<map id="Fitter.h" name="Fitter.h">
+<area shape="rect" id="node2" href="$FirstFit_8h.html" title="The class that implements the lazy version of the FirstFit algorithm. " alt="" coords="115,80,188,107"/>
+<area shape="rect" id="node7" href="$Fitter_8cc.html" title="De implementatie van de Fitter baseclass. " alt="" coords="221,80,291,107"/>
+<area shape="rect" id="node8" href="$NextFit_8h.html" title="The class that implements the lazy version of the NextFit algorithm. " alt="" coords="318,80,393,107"/>
+<area shape="rect" id="node3" href="$FirstFit_8cc.html" title="De implementatie van FirstFit. " alt="" coords="5,155,85,181"/>
+<area shape="rect" id="node4" href="$FirstFit2_8h.html" title="The class that implements the eager version of the FirstFit algorithm. " alt="" coords="110,155,191,181"/>
+<area shape="rect" id="node6" href="$main_8cc.html" title="The main program. " alt="" coords="219,229,287,256"/>
+<area shape="rect" id="node5" href="$FirstFit2_8cc.html" title="De implementatie van FirstFit2. " alt="" coords="107,229,195,256"/>
+<area shape="rect" id="node9" href="$NextFit2_8h.html" title="The class that implements the eager version of the NextFit algorithm. " alt="" coords="317,155,399,181"/>
+<area shape="rect" id="node11" href="$NextFit_8cc.html" title="De implementatie van NextFit. " alt="" coords="424,155,505,181"/>
+<area shape="rect" id="node10" href="$NextFit2_8cc.html" title="De implementatie van NextFit2. " alt="" coords="313,229,404,256"/>
+</map>

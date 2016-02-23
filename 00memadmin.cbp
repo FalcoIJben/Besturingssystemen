@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="memadmin" />
+		<Option makefile="makefile" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Option show_notes="1">
+			<notes>
+				<![CDATA[A framework to test and measure various memory administration algorithms]]>
+			</notes>
+		</Option>
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/main" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option parameters="-tc -fF" />
+				<Compiler>
+					<Add option="-std=c++11" />
+					<Add option="-Wall" />
+					<Add option="-Wextra" />
+					<Add option="-Wmain" />
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="Allocator.cc" />
+		<Unit filename="Allocator.h" />
+		<Unit filename="Application.cc" />
+		<Unit filename="Application.h" />
+		<Unit filename="Area.cc" />
+		<Unit filename="Area.h" />
+		<Unit filename="FirstFit.cc" />
+		<Unit filename="FirstFit.h" />
+		<Unit filename="FirstFit2.cc" />
+		<Unit filename="FirstFit2.h" />
+		<Unit filename="Fitter.cc" />
+		<Unit filename="Fitter.h" />
+		<Unit filename="NextFit.cc" />
+		<Unit filename="NextFit.h" />
+		<Unit filename="NextFit2.cc" />
+		<Unit filename="NextFit2.h" />
+		<Unit filename="RandomFit.cc" />
+		<Unit filename="RandomFit.h" />
+		<Unit filename="Stopwatch.cc" />
+		<Unit filename="Stopwatch.h" />
+		<Unit filename="ansi.h" />
+		<Unit filename="assert_error.cc" />
+		<Unit filename="assert_error.h" />
+		<Unit filename="asserts.h" />
+		<Unit filename="common.h" />
+		<Unit filename="main.cc" />
+		<Unit filename="main.h" />
+		<Unit filename="unix_error.cc" />
+		<Unit filename="unix_error.h" />
+		<Unit filename="where.h" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+			<envvars />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

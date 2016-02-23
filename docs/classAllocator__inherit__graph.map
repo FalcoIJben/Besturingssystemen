@@ -1,0 +1,8 @@
+<map id="Allocator" name="Allocator">
+<area shape="rect" id="node2" href="$classFitter.html" title="A Fitter baseclass for various implementations of the members of the &quot;fit&quot; algorithm family..." alt="" coords="81,277,172,472"/>
+<area shape="rect" id="node7" href="$classRandomFit.html" title="De Random Fit allocator geeft een nep&#45;resultaat terug. " alt="" coords="196,314,303,435"/>
+<area shape="rect" id="node3" href="$classFirstFit.html" title="Het FirstFit algorithme gebruikt het eerste gevonden bruikbare gebied in de resource map..." alt="" coords="5,528,115,723"/>
+<area shape="rect" id="node5" href="$classNextFit.html" title="Het NextFit algorithme gebruikt het eerste gevonden bruikbare gebied in de resource map..." alt="" coords="139,521,249,730"/>
+<area shape="rect" id="node4" href="$classFirstFit2.html" title="Het FirstFit algorithme gebruikt het eerste gevonden bruikbare gebied in de resource map..." alt="" coords="15,779,105,871"/>
+<area shape="rect" id="node6" href="$classNextFit2.html" title="Het NextFit algorithme gebruikt het eerste gevonden bruikbare gebied in de resource map..." alt="" coords="149,779,240,871"/>
+</map>
