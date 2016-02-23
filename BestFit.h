@@ -42,7 +42,7 @@ class BestFit : public Fitter
 	virtual	 bool	  reclaim();
 
 
-
+	virtual  void	updateStats();	///< update resource map statistics
 
 
 

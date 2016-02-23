@@ -30,7 +30,7 @@ using std::vector;
 // TODO:
 // .... voeg hier je eigen variant(en) toe ....
 // bijvoorbeeld:
-//#include "BestFit.h"		// pas de naam aan aan jouw versie
+#include "BestFit.h"		// pas de naam aan aan jouw versie
 //#include "BestFit2.h"		// pas de naam aan aan jouw versie
 //#include "WorstFit.h"		// pas de naam aan aan jouw versie
 //#include "WorstFit2.h"		// pas de naam aan aan jouw versie
@@ -82,7 +82,7 @@ void	tellOptions(const char *progname)
 	cout << "\t-N\t\tuse the next fit allocator (eager)\n";
 	// TODO:
 	// Fitter groep
-	//cout << "\t-b\t\tuse the best fit allocator (lazy)\n";
+	cout << "\t-b\t\tuse the best fit allocator (lazy)\n";
 	//cout << "\t-B\t\tuse the best fit allocator (eager)\n";
 	//cout << "\t-w\t\tuse the worst fit allocator (lazy)\n";
 	//cout << "\t-W\t\tuse the worst fit allocator (eager)\n";
@@ -100,7 +100,7 @@ void	tellOptions(const char *progname)
 void	doOptions(int argc, char *argv[])
 {
 	// TODO:
-	char  options[] = "s:a:tvcrfFnN"; // De opties die we willen herkennen
+	char  options[] = "s:a:tvcrfFnNb"; // De opties die we willen herkennen
 	// Als je algoritmes toevoegt dan moet je de string hierboven uitbreiden.
 	// (Vergeet niet om de tellOptions functie hiervoor ook aan te passen)
 	// Als je alle algoritmes zou realiseren dan wordt
@@ -169,10 +169,13 @@ void	doOptions(int argc, char *argv[])
 				beheerders.push_back( new NextFit2 );
 				break;
 			// TODO:
-			/*
+
 			case 'b': // -b = BestFit allocator gevraagd
 				beheerders.push_back( new BestFit );
 				break;
+
+
+				/*
 			case 'B': // -B = BestFit2 allocator gevraagd
 				beheerders.push_back( new BestFit2 );
 				break;

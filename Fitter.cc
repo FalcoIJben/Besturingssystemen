@@ -5,7 +5,7 @@
 
 #include <cmath>		// for: sqrt(3) [needs -lm]
 #include "ansi.h"		// ansi color codes
-
+#include "asserts.h"
 #include "Fitter.h"
 
 
