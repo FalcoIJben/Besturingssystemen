@@ -50,15 +50,15 @@ using std::vector;
 
 // wat gaan we doen
 int			  size = 10240;			///< de omvang van het beheerde geheugen
-bool		  cflag = false;		///< laat de allocator foute 'free' acties detecteren
+bool		  cflag = true;		///< laat de allocator foute 'free' acties detecteren
 									///< (voor sommige algorithmes is dit duur)
 
 // operationele informatie
 vector<Allocator*>	beheerders;		///< de gekozen beheerders
 int			  aantal = 10000;		///< hoe vaak doen we iets met dat geheugen
-bool		  tflag = false;		///< 'true' als we de code willen "testen"
+bool		  tflag = true;		///< 'true' als we de code willen "testen"
 									///< anders wordt er "gemeten".
-bool		  vflag = false;		///< vertel wat er allemaal gebeurt
+bool		  vflag = true;		///< vertel wat er allemaal gebeurt
 
 
 /// Vertel welke opties dit programma kent

@@ -19,6 +19,8 @@ class BestFit : public Fitter
     ///destuctor
     ~BestFit();
 
+    void	 setSize(int new_size);	///< initialize memory size
+
 
 	/// Ask for an area of at least 'wanted' units.
 	/// @returns	An area or 0 if not enough freespace available
@@ -30,6 +32,7 @@ class BestFit : public Fitter
 
     protected:
 
+    //areas small to large
     std::list<Area*>  areas;
 
 

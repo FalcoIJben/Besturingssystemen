@@ -77,12 +77,13 @@
 1422129314 /home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/FirstFit2.h
 	"FirstFit.h"
 
-1391268106 source:/home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/Fitter.cc
+1456484429 source:/home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/Fitter.cc
 	<cmath>
 	"ansi.h"
+	"asserts.h"
 	"Fitter.h"
 
-1455000543 source:/home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/main.cc
+1456487474 source:/home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/main.cc
 	<vector>
 	<cstdlib>
 	<getopt.h>
@@ -92,6 +93,7 @@
 	"FirstFit2.h"
 	"NextFit.h"
 	"NextFit2.h"
+	"BestFit.h"
 	"Application.h"
 
 1422129376 /home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/RandomFit.h
@@ -134,4 +136,11 @@
 	<stdexcept>
 	<string>
 	"where.h"
+
+1456488407 /home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/BestFit.h
+	"Fitter.h"
+
+1456489023 source:/home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/BestFit.cc
+	"BestFit.h"
+	"ansi.h"
 

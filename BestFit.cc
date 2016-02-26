@@ -10,6 +10,13 @@ BestFit::~BestFit()
 	}
 }
 
+void  BestFit::setSize(int new_size)
+{
+	require(areas.empty());					// prevent changing the size when the freelist is nonempty
+	Fitter::setSize(new_size);
+	areas.push_back(new Area(0, new_size));	// and create the first free area (i.e. "all")
+}
+
 Area *BestFit::alloc(int wanted)
 {
     require(wanted > 0);		// minstens "iets",
@@ -17,12 +24,13 @@ Area *BestFit::alloc(int wanted)
 
 
     updateStats();
+
     if(areas.empty()){
         return 0;
     }
     // Search thru all available free areas
     Area  *ap = searcher(wanted);		// first attempt
-    if (ap) {					// success ?
+    if (ap) {					        // success ?
         return ap;
     }
 
@@ -30,12 +38,21 @@ Area *BestFit::alloc(int wanted)
 
 
 }
-
+///inserts area into areas
 void BestFit::free(Area *ap)
 {
-    areas.push_back(ap);	// de lazy version
-
+    //voeg op juiste plek toe
+    for(ALiterator  i = areas.begin() ; i != areas.end() ; ++i) {
+        Area  *area = *i;
+        if(ap->getSize() < area->getSize()) {
+            areas.insert(i, ap);
+            return;
+            //i = areas.end();
+        }
+    }
+    areas.push_back(ap);
 }
+
 
 Area *BestFit::searcher(int wanted)
 {
@@ -43,35 +60,21 @@ Area *BestFit::searcher(int wanted)
 	require(wanted <= size);	// but not more than can exist,
 	require(!areas.empty());	// provided we do have something to give
 
-    //the area that fits the best
-    Area*  bestArea = 0;
-    ALiterator  next = areas.end();
-
     for(ALiterator  i = areas.begin() ; i != areas.end() ; ++i) {
         Area  *area = *i;
-        if(area->getSize() >= wanted){
-            if(area->getSize() == wanted){
-                //area is ideal, so return
-                areas.erase(i);
-                return area;
+        if(wanted  <= area->getSize()) {
+            if(wanted != area->getSize()) {
+                if(area->getSize() > wanted) {		    // Larger than needed ?
+                    Area  *rp = area->split(wanted);    // Split into two parts (updating sizes)
+                    free(rp);	                        // Insert remainder into area
+                }
             }
-
-            if(bestArea == 0 ||bestArea->getSize() > area->getSize()){
-                //this area is a better area
-                bestArea = area;
-                next = i;
-            }
+            areas.erase(i);
+            return area;
         }
     }
-    if(bestArea != 0) {
-        next = areas.erase(next);
-        if(bestArea->getSize() > wanted) {		    // Larger than needed ?
-            Area  *rp = bestArea->split(wanted);	// Split into two parts (updating sizes)
-            areas.insert(next, rp);			        // Insert remainder before "next" area
-        }
-    }
-
-    return  bestArea;
+    //geen area groot genoeg
+    return 0;
 }
 
 // Try to join fragmented freespace
@@ -107,6 +110,7 @@ bool	BestFit::reclaim()
 
 
 // Update statistics
+///????
 void	BestFit::updateStats()
 {
     ++qcnt;									// number of 'alloc's
