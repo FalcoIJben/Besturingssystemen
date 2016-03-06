@@ -17,7 +17,7 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
-				<Option parameters="-tc -fF" />
+				<Option parameters="-tc -b" />
 				<Compiler>
 					<Add option="-std=c++11" />
 					<Add option="-Wall" />
@@ -31,12 +31,17 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="00memadmin.cbp" />
+		<Unit filename="00memadmin.depend" />
+		<Unit filename="00memadmin.layout" />
 		<Unit filename="Allocator.cc" />
 		<Unit filename="Allocator.h" />
 		<Unit filename="Application.cc" />
 		<Unit filename="Application.h" />
 		<Unit filename="Area.cc" />
 		<Unit filename="Area.h" />
+		<Unit filename="BestFit.cc" />
+		<Unit filename="BestFit.h" />
 		<Unit filename="FirstFit.cc" />
 		<Unit filename="FirstFit.h" />
 		<Unit filename="FirstFit2.cc" />
@@ -51,13 +56,18 @@
 		<Unit filename="RandomFit.h" />
 		<Unit filename="Stopwatch.cc" />
 		<Unit filename="Stopwatch.h" />
+		<Unit filename="_deps" />
 		<Unit filename="ansi.h" />
 		<Unit filename="assert_error.cc" />
 		<Unit filename="assert_error.h" />
 		<Unit filename="asserts.h" />
 		<Unit filename="common.h" />
+		<Unit filename="doxyfile" />
+		<Unit filename="index.html" />
 		<Unit filename="main.cc" />
 		<Unit filename="main.h" />
+		<Unit filename="makefile" />
+		<Unit filename="opdracht.dox" />
 		<Unit filename="unix_error.cc" />
 		<Unit filename="unix_error.h" />
 		<Unit filename="where.h" />

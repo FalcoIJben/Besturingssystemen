@@ -314,5 +314,145 @@ void	Application::randomscenario(int aantal, bool vflag)
 // Schrijf je eigen scenario routine die zich meer gedraagt als een
 // echte applicatie. En vergeet niet Application.h ook aan te passen.
 
+///onze eigen vraagkans
+bool	Application::berekendeVraagkans(int r, int extrakans )
+{
+    return (((r >> 5) % 18) < (5+extrakans) );
+    //bijna het zelfde als de normale vraagkans,
+    //maar hierbij kan de kans varieren van 5 v/d 18 keer tot 11 v/d 18 keer
+
+}
+
+int     Application::berekendeGrootte(bool veelGroteObjecten, bool veelKleineObjecten)
+{
+    //de maximale grootte avn een klein object is 0,5% van alles
+    int halfMaxSize = size/200;
+
+    //een groot object heeft een vaste grootte
+    int grootObjectGrootte = halfMaxSize + size/350;
+
+    if(veelGroteObjecten == veelKleineObjecten) {
+        //geen voorkeur over hoe groot de objecten zijn
+
+        if(randint(0,3) % 2) { //dit kan omdat 0 false is, en de rest true
+            //groot object
+            return grootObjectGrootte;
+        } else {
+            //klein object
+            return randint(1, halfMaxSize );
+        }
+    } else if(veelGroteObjecten) {
+        //veel grote objecten
+        if(randint(0,3)) {
+            //klein object
+            return randint(1, halfMaxSize );
+        } else {
+            //groot object
+            return grootObjectGrootte;
+        }
+    } else {
+        //veel kleine objecten
+        if(randint(0,3)) {
+            //groot object
+            return grootObjectGrootte;
+        } else {
+            //klein object
+            return randint(1, halfMaxSize );
+        }
+    }
+}
+
+void    Application::vergeetOudsteKleinObject()
+{
+    //vergeet het oudste bericht
+
+    require(! objecten.empty());
+	Area  *ap = objecten.front();
+
+	//na 10 keer te hebben gezocht naar het oudste bericht, doet die niks.
+	int maalProberen = 10;
+
+	ALiterator  i;
+    for (i = objecten.begin() ; (maalProberen > 0) && (i != objecten.end()) ; ++i, --maalProberen) {
+        ap = *i;
+
+        if(ap->getSize() < size/200) {    //als het object kleiner is da de maximale grootte van een klein object, is het een klein object
+            if (vflag)						// vertel wat we doen
+                cout << "Vrijgeven " << (*ap) << endl;
+            objecten.erase(i);
+            beheerder->free(ap);
+            return;
+        }
+    }
+}
+
+void    Application::vergeetRandomGrootObject()
+{
+    //vergeet random gebruiker, omdat deze bijvoorbeeld disconnect
+    require(! objecten.empty());	// hebben we eigenlijk wel wat ?
+
+	Area  *ap = objecten.front();	// het oudste gebied alvast opzoeken
+
+	int  n = objecten.size();		// valt er wat te kiezen?
+	if (n > 1) {
+		int  m = randint(0, n);		// kies een index
+		// en zoek dat element op
+		ALiterator  i;
+		for (i = objecten.begin() ; (m > 0) && (i != objecten.end()) ; ++i, --m) {
+			;
+		}
+		ap = *i;
+		if(ap->getSize() > size/200)		//als het object groter is da de maximale grootte van een klein object, is het een klein object
+		objecten.erase(i);			// uit de lijst halen
+	} else {
+		objecten.pop_front();		// het oudste gebied uit de lijst halen
+	}
+
+	if (vflag) {
+		// vertel wat we gaan doen
+		cout << "Vrijgeven " << (*ap) << endl;
+	}
+
+	beheerder->free(ap);			// en het gebied weer vrij geven
+}
+
+
+
+void    Application::chatroomscenario(int aantal, bool vflag, bool veelGroteObjecten, bool veelKleineObjecten)
+{
+    bool old_vflag = this->vflag;
+	this->vflag = vflag;	// verbose mode aan/uit
+
+	oom_teller = 0;			// reset failure counter
+	err_teller = 0;			// reset error counter
+
+	int extrakans = 3 * veelGroteObjecten + 3 * veelKleineObjecten; //kan gewoon :D
+
+
+    Stopwatch  klok;		// Een stopwatch om de tijd te meten
+	klok.start();			// -----------------------------------
+	for (int  i = 0 ; i < aantal ; ++i) {
+		int  r = rand();
+
+
+		if (objecten.empty() || berekendeVraagkans(r, extrakans) ) {    // Gooi de gemanipuleerde dobbelsteen
+            vraagGeheugen(berekendeGrootte(veelGroteObjecten, veelKleineObjecten));
+		} else if(!objecten.empty()){                                   // hoeft eigenlijk niet deze check, maar we doen het voor de zekerheid, net zoals in random scenario
+
+		}
+		//else -> we doen lekker niks (dit hoort niet voor te komen)
+
+
+	}
+	klok.stop();			// -----------------------------------
+	klok.report();			// Vertel de gemeten processor tijd
+	beheerder->report();	// en de statistieken van de geheugenbeheer zelf
+
+
+}
+
+
+
+
 
 // vim:sw=4:ai:aw:ts=4:

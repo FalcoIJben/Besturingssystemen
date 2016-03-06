@@ -56,7 +56,7 @@ bool		  cflag = true;		///< laat de allocator foute 'free' acties detecteren
 // operationele informatie
 vector<Allocator*>	beheerders;		///< de gekozen beheerders
 int			  aantal = 10000;		///< hoe vaak doen we iets met dat geheugen
-bool		  tflag = true;		///< 'true' als we de code willen "testen"
+bool		  tflag = false;		///< 'true' als we de code willen "testen"
 									///< anders wordt er "gemeten".
 bool		  vflag = true;		///< vertel wat er allemaal gebeurt
 

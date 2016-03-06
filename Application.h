@@ -54,6 +54,13 @@ public:
 	/// @param	vflag	true=vertel wat er allemaal gebeurt (kost wel performance)
 	void randomscenario(int aantal, bool vflag);
 
+	/// Voert het chatroom secenario uit, zoals beschreven in documentatie
+	/// @param	aantal	            hoe vaak wordt er alloc of free gedaan
+	/// @param	vflag	            true=vertel wat er allemaal gebeurt (kost wel performance)
+	/// @param	veelGroteObjecten   true=veel verbindingen
+	/// @param	veelKleineObjecten	true=veel berichten
+	void chatroomscenario(int aantal, bool vflag, bool veelGroteObjecten, bool veelKleineObjecten);
+
 	// TODO:
 	// voeg hier straks je eigen scenario(s) toe
 	// (en in Application.cc)
@@ -64,6 +71,11 @@ private:
 	void	vraagGeheugen(int omvang);
 	void	vergeetOudste();
 	void	vergeetRandom();
+	// onze eigen hulpjes
+	bool	berekendeVraagkans(int r, int extrakans);
+	int     berekendeGrootte(bool veelGroteObjecten, bool veelKleineObjecten);
+	void    vergeetOudsteKleinObject();
+	void    vergeetRandomGrootObject();
 
 	// for statistics
 	int		err_teller; // Errors teller
