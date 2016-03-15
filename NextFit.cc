@@ -161,7 +161,7 @@ void	NextFit::updateStats()
 
 void     NextFit::reportTooSmallSpacesCount()
 {
-	int count = 0;
+	double count = 0;
     ALiterator  i;
     for (i = areas.begin() ; i != areas.end() ; ++i) {
         Area *ap = *i;
@@ -170,7 +170,10 @@ void     NextFit::reportTooSmallSpacesCount()
         }
     }
     std::cout << "aantal te kleine ruimtes   = " << count << std::endl;
-    std::cout << "totaal aantal ruimtes      = " << areas.size() << std::endl << std::endl;
+    std::cout << "totaal aantal ruimtes      = " << areas.size() << std::endl;
+    std::cout.precision(5);
+    double b = 5*(areas.size() / count);
+    std::cout << "b = " << std::fixed << b << std::endl << std::endl;
 }
 
 // vim:sw=4:ai:aw:ts=4:

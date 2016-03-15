@@ -539,6 +539,9 @@ void    Application::chatroomscenario(int aantal, bool vflag, bool veelGroteObje
     cout << "Factor C" << endl;
     cout << "aantal objecten in gebruik = " << objecten.size() << endl;
     cout << "totaal aantal ruimtes      = " << beheerder->getSize() << endl;
+    float c = 4*(objecten.size() / double(beheerder->getSize()));
+    cout.precision(10);
+    cout << "c = " << c << endl;
 
 
 }
