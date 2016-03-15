@@ -10,6 +10,7 @@
 #include "main.h"			// common global stuff
 #include "Stopwatch.h"		// De cpu tijd meter
 #include "Application.h"	// De pseudo applicatie
+#include "BestFit.h"	// De pseudo applicatie
 
 // introduce std shorthands
 using std::cout;
@@ -118,23 +119,26 @@ void	Application::vraagGeheugen(int omvang)
 	objecten.push_back(ap);
 }
 
-
+///returnt nu de grootte die vergeten is
 // actie: geef een gekregen gebied weer terug (onze versie van 'delete')
-void	Application::vergeetOudste()
+int	Application::vergeetOudste()
 {
+    int grootte = 0;
 	require(! objecten.empty());	// hebben we eigenlijk wel wat ?
 	Area  *ap = objecten.front();	// het oudste gebied opzoeken
 	if (vflag)						// vertel wat we gaan doen
 		cout << "Vrijgeven " << (*ap) << endl;
 	objecten.pop_front();			// gebied uit de lijst halen
+    grootte = ap->getSize();
 	beheerder->free(ap);			// en vrij geven
+	return grootte;
 }
-
+///returnt nu de grootte die vergeten is
 // actie: geef een gekregen gebied weer terug (onze versie van 'delete')
-void	Application::vergeetRandom()
+int	Application::vergeetRandom()
 {
 	require(! objecten.empty());	// hebben we eigenlijk wel wat ?
-
+    int grootte = 0;
 	Area  *ap = objecten.front();	// het oudste gebied alvast opzoeken
 
 	int  n = objecten.size();		// valt er wat te kiezen?
@@ -145,7 +149,7 @@ void	Application::vergeetRandom()
 		for (i = objecten.begin() ; (m > 0) && (i != objecten.end()) ; ++i, --m) {
 			;
 		}
-		ap = *i;					// het slachtoffer
+		ap = *i;	                // het slachtoffer
 		objecten.erase(i);			// uit de lijst halen
 	} else {
 		objecten.pop_front();		// het oudste gebied uit de lijst halen
@@ -156,7 +160,9 @@ void	Application::vergeetRandom()
 		cout << "Vrijgeven " << (*ap) << endl;
 	}
 
+    grootte = ap->getSize();
 	beheerder->free(ap);			// en het gebied weer vrij geven
+	return grootte;
 }
 
 
@@ -317,9 +323,9 @@ void	Application::randomscenario(int aantal, bool vflag)
 ///onze eigen vraagkans
 bool	Application::berekendeVraagkans(int r, int extrakans )
 {
-    return (((r >> 5) % 18) < (5+extrakans) );
+    return (((r >> 5) % 18) < (12+extrakans) );
     //bijna het zelfde als de normale vraagkans,
-    //maar hierbij kan de kans varieren van 5 v/d 18 keer tot 11 v/d 18 keer
+    //maar hierbij kan de kans varieren van 12 v/d 18 keer tot 17 v/d 18 keer
 
 }
 
@@ -334,43 +340,43 @@ int     Application::berekendeGrootte(bool veelGroteObjecten, bool veelKleineObj
     if(veelGroteObjecten == veelKleineObjecten) {
         //geen voorkeur over hoe groot de objecten zijn
 
-        if(randint(0,3) % 2) { //dit kan omdat 0 false is, en de rest true
+        if(!randint(0,4)) { //dit kan omdat 0 false is, en de rest true
             //groot object
             return grootObjectGrootte;
         } else {
             //klein object
-            return randint(1, halfMaxSize );
+            return randint(3, halfMaxSize );
         }
     } else if(veelGroteObjecten) {
         //veel grote objecten
-        if(randint(0,3)) {
+        if(!randint(0,2)) {
             //klein object
-            return randint(1, halfMaxSize );
+            return randint(3, halfMaxSize );
         } else {
             //groot object
             return grootObjectGrootte;
         }
     } else {
         //veel kleine objecten
-        if(randint(0,3)) {
+        if(!randint(0,20)) {
             //groot object
             return grootObjectGrootte;
         } else {
             //klein object
-            return randint(1, halfMaxSize );
+            return randint(3, halfMaxSize );
         }
     }
 }
-
-void    Application::vergeetOudsteKleinObject()
+///return of er ebject is verwijderd
+bool    Application::vergeetOudsteKleinObject()
 {
     //vergeet het oudste bericht
 
     require(! objecten.empty());
 	Area  *ap = objecten.front();
 
-	//na 10 keer te hebben gezocht naar het oudste bericht, doet die niks.
-	int maalProberen = 10;
+	//na 100 keer te hebben gezocht naar het oudste bericht, doet die niks.
+	int maalProberen = 100;
 
 	ALiterator  i;
     for (i = objecten.begin() ; (maalProberen > 0) && (i != objecten.end()) ; ++i, --maalProberen) {
@@ -381,14 +387,16 @@ void    Application::vergeetOudsteKleinObject()
                 cout << "Vrijgeven " << (*ap) << endl;
             objecten.erase(i);
             beheerder->free(ap);
-            return;
+            return true;
         }
     }
+    return false;
 }
-
-void    Application::vergeetRandomGrootObject()
+///return of er ebject is verwijderd
+bool    Application::vergeetRandomGrootObject()
 {
     //vergeet random gebruiker, omdat deze bijvoorbeeld disconnect
+    //als het na tien keer proberen nie tlukt om ene groot object te vinden kapt die ermee
     require(! objecten.empty());	// hebben we eigenlijk wel wat ?
 
 	Area  *ap = objecten.front();	// het oudste gebied alvast opzoeken
@@ -401,52 +409,131 @@ void    Application::vergeetRandomGrootObject()
 		for (i = objecten.begin() ; (m > 0) && (i != objecten.end()) ; ++i, --m) {
 			;
 		}
-		ap = *i;
-		if(ap->getSize() > size/200)		//als het object groter is da de maximale grootte van een klein object, is het een klein object
-		objecten.erase(i);			// uit de lijst halen
+		int maalProberen = 100;
+		for (i = objecten.begin() ; (maalProberen > 0) && (i != objecten.end()) ; ++i, --m) {
+            ap = *i;
+            if(ap->getSize() > size/200) { //als het object groter is da de maximale grootte van een klein object, is het een klein object
+                if (vflag)						// vertel wat we doen
+                    cout << "Vrijgeven " << (*ap) << endl;
+                objecten.erase(i);
+                beheerder->free(ap);
+            return true;
+            }
+		}
 	} else {
-		objecten.pop_front();		// het oudste gebied uit de lijst halen
-	}
+        if(ap->getSize() > size/200) {
+            objecten.pop_front();		// het oudste gebied uit de lijst halen
+            return true;
+        }
 
-	if (vflag) {
-		// vertel wat we gaan doen
-		cout << "Vrijgeven " << (*ap) << endl;
 	}
+	return false;
 
-	beheerder->free(ap);			// en het gebied weer vrij geven
 }
 
 
 
 void    Application::chatroomscenario(int aantal, bool vflag, bool veelGroteObjecten, bool veelKleineObjecten)
 {
+    int av = 0;
+    int ab = 0;
+
+    int aantalVerbindingen = 0; // het aantal verbindingen moet minstens 1 zijn, anders kunnen er geen berichten worden verzonden
+    int aantalBerichten = 0;
+    int verbindingGrootte = size/200 + size/350;
+
     bool old_vflag = this->vflag;
 	this->vflag = vflag;	// verbose mode aan/uit
 
 	oom_teller = 0;			// reset failure counter
 	err_teller = 0;			// reset error counter
 
-	int extrakans = 3 * veelGroteObjecten + 3 * veelKleineObjecten; //kan gewoon :D
+	int extrakans = 2 * veelGroteObjecten + 3 * veelKleineObjecten; //kan gewoon :D
 
+    srand(1); ///seed
 
     Stopwatch  klok;		// Een stopwatch om de tijd te meten
 	klok.start();			// -----------------------------------
 	for (int  i = 0 ; i < aantal ; ++i) {
-		int  r = rand();
+        if(!aantalVerbindingen) { //als het aantal vebindingen 0 is
+            vraagGeheugen(verbindingGrootte);
+            aantalVerbindingen++;
+            av++;
+            cout << "Nieuwe verbinding" << endl;
+        } else {
+            int  r = rand();
+
+            if (objecten.empty() || berekendeVraagkans(r, extrakans) ) {    // Gooi de gemanipuleerde dobbelsteen
+                int grootte = berekendeGrootte(veelGroteObjecten, veelKleineObjecten);
+                if(grootte == verbindingGrootte) {
+                    //een verbinding
+                    av++;
+                    cout << "Nieuwe verbinding" << endl;
+                    if(aantalVerbindingen < 70) {                             //maximaal 70 verbindingen, daarna kan niemand meer joinen
+                        aantalVerbindingen++;
+                        vraagGeheugen(grootte);
+                    }
+                } else {
+                    //een bericht
+                    aantalBerichten++;
+                    ab++;
+                    cout << "Nieuw bericht" << endl;
+                    if(aantalBerichten > 100) {                             //maximaal 100 berichten geladen op de server, daarna worden ze weg gegooid
+                        vergeetOudsteKleinObject();
+                        aantalBerichten--;
+                    }
+                    vraagGeheugen(grootte);
+                }
+            } else if(!objecten.empty()){                                   // hoeft eigenlijk niet deze check, maar we doen het voor de zekerheid, net zoals in random scenario
+                int ri = randint(1,4);
+                switch(ri) {
+                    case 1:
+                        if(vergeetOudste() == verbindingGrootte) {  //vergeet de een bericht of verbinding
+                            aantalVerbindingen--;
+                        } else {
+                            aantalBerichten--;
+                        }
+                        break;
+                    case 2:
+                        if(vergeetRandom() == verbindingGrootte) {  //vergeet een bericht of verbinding. een bericht kan bijv. verwijdert zijn door gebruiker
+                            aantalVerbindingen--;
+                        } else {
+                            aantalBerichten--;
+                        }
+                        break;
+                    case 3:
+                        if(vergeetRandomGrootObject()) { //vergeet verbinding
+                            aantalVerbindingen--;
+                        }
+                        break;
+                    default:
+                        if(vergeetOudsteKleinObject()) { //vergeet bericht
+                            aantalBerichten--;
+                        }
+                        break;
+                }
 
 
-		if (objecten.empty() || berekendeVraagkans(r, extrakans) ) {    // Gooi de gemanipuleerde dobbelsteen
-            vraagGeheugen(berekendeGrootte(veelGroteObjecten, veelKleineObjecten));
-		} else if(!objecten.empty()){                                   // hoeft eigenlijk niet deze check, maar we doen het voor de zekerheid, net zoals in random scenario
-
-		}
-		//else -> we doen lekker niks (dit hoort niet voor te komen)
-
+            }
+            //else -> we doen lekker niks (dit hoort niet voor te komen)
+        }
 
 	}
 	klok.stop();			// -----------------------------------
 	klok.report();			// Vertel de gemeten processor tijd
 	beheerder->report();	// en de statistieken van de geheugenbeheer zelf
+
+	//bereken factoren
+
+
+	cout << "aantal berichten           = " << ab << endl;
+	cout << "aantal verbindingen        = " << av << endl << endl;
+    Fitter* f = dynamic_cast<Fitter*>(beheerder);
+    if(f != 0) {
+        f->reportTooSmallSpacesCount();            /// een ruimte is te klein, als deze kleiner dan 3 is
+    }
+    cout << "aantal objecten in gebruik = " << objecten.size() << endl;
+    cout << "totaal aantal ruimtes      = " << beheerder->getSize() << endl;
 
 
 }

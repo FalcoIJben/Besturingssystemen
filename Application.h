@@ -37,6 +37,9 @@ private:
 							// true als we de code willen "testen"
 							// anders gaan we "performance meten".
 
+
+
+
 public:
 
 	/// Maak een "applicatie" die geheugen vraagt aan de gegeven beheerder,
@@ -69,13 +72,13 @@ private:
 
 	// interne hulpjes
 	void	vraagGeheugen(int omvang);
-	void	vergeetOudste();
-	void	vergeetRandom();
+	int	vergeetOudste();
+	int	vergeetRandom();
 	// onze eigen hulpjes
 	bool	berekendeVraagkans(int r, int extrakans);
 	int     berekendeGrootte(bool veelGroteObjecten, bool veelKleineObjecten);
-	void    vergeetOudsteKleinObject();
-	void    vergeetRandomGrootObject();
+	bool    vergeetOudsteKleinObject();
+	bool    vergeetRandomGrootObject();
 
 	// for statistics
 	int		err_teller; // Errors teller

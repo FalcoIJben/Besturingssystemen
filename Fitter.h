@@ -36,6 +36,8 @@ public:
 
 	void	 report();				///< report statistics
 
+    virtual void    reportTooSmallSpacesCount();
+
 protected:
 
 	/// This is the actual function that searches for free space

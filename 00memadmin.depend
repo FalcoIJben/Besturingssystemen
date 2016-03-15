@@ -32,11 +32,12 @@
 1421874196 /home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/Allocator.h
 	"Area.h"
 
-1448639046 source:/home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/Application.cc
+1458043903 source:/home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/Application.cc
 	<cstdlib>
 	"main.h"
 	"Stopwatch.h"
 	"Application.h"
+	"BestFit.h"
 
 1448638676 /home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/Stopwatch.h
 	<sys/resource.h>
@@ -46,7 +47,7 @@
 	<sys/time.h>
 	<windows.h>
 
-1457273935 /home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/Application.h
+1457443831 /home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/Application.h
 	<list>
 	"Allocator.h"
 	"Area.h"
@@ -60,14 +61,14 @@
 	<sstream>
 	"assert_error.h"
 
-1391268106 source:/home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/FirstFit.cc
+1458043934 source:/home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/FirstFit.cc
 	"FirstFit.h"
 	"ansi.h"
 
-1422129302 /home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/FirstFit.h
+1458043998 /home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/FirstFit.h
 	"Fitter.h"
 
-1422127900 /home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/Fitter.h
+1458043747 /home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/Fitter.h
 	<list>
 	"Allocator.h"
 
@@ -77,13 +78,13 @@
 1422129314 /home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/FirstFit2.h
 	"FirstFit.h"
 
-1456484429 source:/home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/Fitter.cc
+1458044015 source:/home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/Fitter.cc
 	<cmath>
 	"ansi.h"
 	"asserts.h"
 	"Fitter.h"
 
-1457271699 source:/home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/main.cc
+1458042250 source:/home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/main.cc
 	<vector>
 	<cstdlib>
 	<getopt.h>
@@ -99,13 +100,13 @@
 1422129376 /home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/RandomFit.h
 	"Allocator.h"
 
-1422129328 /home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/NextFit.h
+1458044002 /home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/NextFit.h
 	"Fitter.h"
 
 1422129336 /home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/NextFit2.h
 	"NextFit.h"
 
-1391268112 source:/home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/NextFit.cc
+1458043956 source:/home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/NextFit.cc
 	"main.h"
 	"NextFit.h"
 	"ansi.h"
@@ -137,10 +138,10 @@
 	<string>
 	"where.h"
 
-1456488407 /home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/BestFit.h
+1457519745 /home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/BestFit.h
 	"Fitter.h"
 
-1456489596 source:/home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/BestFit.cc
+1458042001 source:/home/falco/School/Jaar_2/Kwartiel_3/BestuuringsSystemen/opdrachten/memadmin/BestFit.cc
 	"BestFit.h"
 	"ansi.h"
 

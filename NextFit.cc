@@ -159,4 +159,18 @@ void	NextFit::updateStats()
 	qsum2 += (areas.size() * areas.size());	// same: squared
 }
 
+void     NextFit::reportTooSmallSpacesCount()
+{
+	int count = 0;
+    ALiterator  i;
+    for (i = areas.begin() ; i != areas.end() ; ++i) {
+        Area *ap = *i;
+        if(ap->getSize() < 3) {    //als de ruimte kleiner is dan de minimale grootte van een klein object, is het een onbruikbare ruimte
+            count++;
+        }
+    }
+    std::cout << "aantal te kleine ruimtes   = " << count << std::endl;
+    std::cout << "totaal aantal ruimtes      = " << areas.size() << std::endl << std::endl;
+}
+
 // vim:sw=4:ai:aw:ts=4:

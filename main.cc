@@ -49,16 +49,19 @@ using std::vector;
 // Globale hulpvariabelen voor 'main' en 'doOptions'
 
 // wat gaan we doen
-int			  size = 10240;			///< de omvang van het beheerde geheugen
-bool		  cflag = true;		///< laat de allocator foute 'free' acties detecteren
+int			  size = 1024;			///< de omvang van het beheerde geheugen
+bool		  cflag = false;		///< laat de allocator foute 'free' acties detecteren
 									///< (voor sommige algorithmes is dit duur)
 
 // operationele informatie
 vector<Allocator*>	beheerders;		///< de gekozen beheerders
-int			  aantal = 10000;		///< hoe vaak doen we iets met dat geheugen
+int			  aantal = 100000;		///< hoe vaak doen we iets met dat geheugen
 bool		  tflag = false;		///< 'true' als we de code willen "testen"
 									///< anders wordt er "gemeten".
-bool		  vflag = true;		///< vertel wat er allemaal gebeurt
+bool		  vflag = false;		///< vertel wat er allemaal gebeurt
+
+bool veelGroteObjecten  = false;
+bool veelKleineObjecten = false;
 
 
 /// Vertel welke opties dit programma kent
@@ -100,7 +103,7 @@ void	tellOptions(const char *progname)
 void	doOptions(int argc, char *argv[])
 {
 	// TODO:
-	char  options[] = "s:a:tvcrfFnNb"; // De opties die we willen herkennen
+	char  options[] = "s:a:tvcrfFnNbkg"; // De opties die we willen herkennen
 	// Als je algoritmes toevoegt dan moet je de string hierboven uitbreiden.
 	// (Vergeet niet om de tellOptions functie hiervoor ook aan te passen)
 	// Als je alle algoritmes zou realiseren dan wordt
@@ -125,6 +128,11 @@ void	doOptions(int argc, char *argv[])
 	// W  staat voor; -w = worst-fit allocator (eager)
 	//  enz
 	// 2  staat voor: -2 = buddy allocator
+	//
+	// Chatserver opties:
+	// "k" staat voor: -k = veel kleine objecten
+	// "g" staat voor: -g = veel grote objecten
+	//
 	//
 	// Voor meer informatie, zie: man 3 getopt
 	//
@@ -168,6 +176,15 @@ void	doOptions(int argc, char *argv[])
 			case 'N': // -n = NextFit2 allocator gevraagd
 				beheerders.push_back( new NextFit2 );
 				break;
+
+                //CHATSERVER
+            case 'k': // toggle veel keine objecten
+                veelKleineObjecten = !veelKleineObjecten;
+                break;
+            case 'g': // toggle veel grote objecten
+                veelGroteObjecten = !veelGroteObjecten;
+                break;
+
 			// TODO:
 
 			case 'b': // -b = BestFit allocator gevraagd
@@ -253,10 +270,8 @@ int  main(int argc, char *argv[])
 			} else {
 				cout << AC_BLUE "Measuring " << beheerder->getType()
 					 << " doing " << aantal << " calls on " << size << " units\n" AA_RESET;
-				mp->randomscenario(aantal, vflag);
-				// TODO:
-				// .. vervang straks 'randomscenario' door iets toepasselijkers
-				// zodat je ook voorspelbare scenarios kan afhandelen.
+				//mp->randomscenario(aantal, vflag);
+				mp->chatroomscenario(aantal, vflag, veelGroteObjecten, veelKleineObjecten);
 			}
 
 			// Nu alles weer netjes opruimen

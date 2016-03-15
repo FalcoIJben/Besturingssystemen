@@ -110,10 +110,25 @@ bool	BestFit::reclaim()
 
 
 // Update statistics
-///????
 void	BestFit::updateStats()
 {
     ++qcnt;									// number of 'alloc's
     qsum  += areas.size();					// length of resource map
     qsum2 += (areas.size() * areas.size());	// same: squared
 }
+
+
+void     BestFit::reportTooSmallSpacesCount()
+{
+	int count = 0;
+    ALiterator  i;
+    for (i = areas.begin() ; i != areas.end() ; ++i) {
+        Area *ap = *i;
+        if(ap->getSize() < 3) {    //als de ruimte kleiner is dan de minimale grootte van een klein object, is het een onbruikbare ruimte
+            count++;
+        }
+    }
+    std::cout << "aantal te kleine ruimtes   = " << count << std::endl;
+    std::cout << "totaal aantal ruimtes      = " << areas.size() << std::endl << std::endl;
+}
+

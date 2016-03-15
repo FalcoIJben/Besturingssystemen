@@ -50,5 +50,12 @@ void	Fitter::report()
 	// 99.7% of the time it will be within 3-sigma
 }
 
+void     Fitter::reportTooSmallSpacesCount()
+{
+    std::cout << "geen resultaten mogelijk "<< std::endl;
+}
+
+
+
 
 // vim:sw=4:ai:aw:ts=4:

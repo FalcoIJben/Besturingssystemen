@@ -38,6 +38,8 @@ public:
 	/// @param ap	The area returned to free space
 	void	free(Area *ap);
 
+	void     reportTooSmallSpacesCount();
+
 protected:
 
 	/// List of all the available free areas

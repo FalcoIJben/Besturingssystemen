@@ -30,6 +30,8 @@ class BestFit : public Fitter
 	/// @param ap	The area returned to free space
 	virtual  void	free(Area *ap);
 
+    void     reportTooSmallSpacesCount();
+
     protected:
 
     //areas small to large
@@ -37,7 +39,7 @@ class BestFit : public Fitter
 
 
 
-    Area 	*searcher(int);
+    Area 	*searcher(int wanted);
 
 	/// This function is called when the searcher can not find space.
 	/// It tries to reclaim fragmented space by merging adjacent free areas.
@@ -46,6 +48,10 @@ class BestFit : public Fitter
 
 
 	virtual  void	updateStats();	///< update resource map statistics
+
+
+
+
 
 
 

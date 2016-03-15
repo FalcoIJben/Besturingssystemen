@@ -17,7 +17,7 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
-				<Option parameters="-tc -b" />
+				<Option parameters=" -f" />
 				<Compiler>
 					<Add option="-std=c++11" />
 					<Add option="-Wall" />
