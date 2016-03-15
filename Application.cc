@@ -450,7 +450,7 @@ void    Application::chatroomscenario(int aantal, bool vflag, bool veelGroteObje
 
 	int extrakans = 2 * veelGroteObjecten + 3 * veelKleineObjecten; //kan gewoon :D
 
-    srand(1); ///seed
+    srand(2); ///seed
 
     Stopwatch  klok;		// Een stopwatch om de tijd te meten
 	klok.start();			// -----------------------------------
