@@ -459,7 +459,7 @@ void    Application::chatroomscenario(int aantal, bool vflag, bool veelGroteObje
             vraagGeheugen(verbindingGrootte);
             aantalVerbindingen++;
             av++;
-            cout << "Nieuwe verbinding" << endl;
+            //cout << "Nieuwe verbinding" << endl;
         } else {
             int  r = rand();
 
@@ -468,7 +468,7 @@ void    Application::chatroomscenario(int aantal, bool vflag, bool veelGroteObje
                 if(grootte == verbindingGrootte) {
                     //een verbinding
                     av++;
-                    cout << "Nieuwe verbinding" << endl;
+                    //cout << "Nieuwe verbinding" << endl;
                     if(aantalVerbindingen < 70) {                             //maximaal 70 verbindingen, daarna kan niemand meer joinen
                         aantalVerbindingen++;
                         vraagGeheugen(grootte);
@@ -477,7 +477,7 @@ void    Application::chatroomscenario(int aantal, bool vflag, bool veelGroteObje
                     //een bericht
                     aantalBerichten++;
                     ab++;
-                    cout << "Nieuw bericht" << endl;
+                    //cout << "Nieuw bericht" << endl;
                     if(aantalBerichten > 100) {                             //maximaal 100 berichten geladen op de server, daarna worden ze weg gegooid
                         vergeetOudsteKleinObject();
                         aantalBerichten--;
@@ -521,6 +521,7 @@ void    Application::chatroomscenario(int aantal, bool vflag, bool veelGroteObje
 	}
 	klok.stop();			// -----------------------------------
 	klok.report();			// Vertel de gemeten processor tijd
+	cout << endl;
 	beheerder->report();	// en de statistieken van de geheugenbeheer zelf
 
 	//bereken factoren
@@ -528,10 +529,14 @@ void    Application::chatroomscenario(int aantal, bool vflag, bool veelGroteObje
 
 	cout << "aantal berichten           = " << ab << endl;
 	cout << "aantal verbindingen        = " << av << endl << endl;
+
+	cout << "Factor B" << endl;
     Fitter* f = dynamic_cast<Fitter*>(beheerder);
     if(f != 0) {
         f->reportTooSmallSpacesCount();            /// een ruimte is te klein, als deze kleiner dan 3 is
     }
+
+    cout << "Factor C" << endl;
     cout << "aantal objecten in gebruik = " << objecten.size() << endl;
     cout << "totaal aantal ruimtes      = " << beheerder->getSize() << endl;
 
